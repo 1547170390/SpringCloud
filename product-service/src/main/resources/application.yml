@@ -9,6 +9,6 @@ spring:
 # 设置 Mybatis 的 xml 保存路径
 mybatis-plus:
   configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #??
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl 
     map-underscore-to-camel-case: true
 
