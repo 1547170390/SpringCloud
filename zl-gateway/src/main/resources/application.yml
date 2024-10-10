@@ -17,3 +17,9 @@ spring:
           predicates:
             - Path=/product/**
 
+zl:
+  auth:
+    exclude-paths:
+      - /order/**
+      - /product/**
+      - /users/login
