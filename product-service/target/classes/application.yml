@@ -1,14 +1,21 @@
 server:
   port: 9090
 spring:
+  application:
+    name: product-service
   datasource:
     url: jdbc:mysql://10.211.55.8:3306/cloud_product?characterEncoding=utf8&useSSL=false
     username: root
     password: xzl.995
     driver-class-name: com.mysql.cj.jdbc.Driver
+  cloud:
+    nacos:
+      server-addr: 10.211.55.7:8848
+    openfeign:
+      okhttp:
+        enabled: true # 开启OKHttp功能，Feign的底层实现不支持连接池，因此开启支持连接池的okhttp
 # 设置 Mybatis 的 xml 保存路径
 mybatis-plus:
   configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #??
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
     map-underscore-to-camel-case: true
-
