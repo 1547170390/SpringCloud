@@ -17,7 +17,8 @@ public class DefaultFeignConfig {
         return new RequestInterceptor() {
             @Override
             public void apply(RequestTemplate requestTemplate) {
-                Long userId = UserContext.getUser();
+//                Long userId = UserContext.getUser();
+                Long userId = 1L;
                 if(userId == null){
                     return;
                 }

@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: gateway
+  cloud:
+    nacos:
+      server-addr: 10.211.55.7
+      config:
+        file-extension: yaml
+        shared-configs:
+          - data-id: shared-jdbc.yaml
+            refresh: true
+
