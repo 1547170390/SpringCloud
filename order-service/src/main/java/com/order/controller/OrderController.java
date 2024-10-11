@@ -15,7 +15,7 @@ public class OrderController {
     private OrderService orderService;
 
     @RequestMapping("/{orderId}")
-    public OrderInfo getOrderById(@PathVariable("orderId") Integer orderId) {
+    public OrderInfo getOrderById(@PathVariable("orderId") Integer orderId) throws InterruptedException {
         return orderService.selectOrderById(orderId);
     }
 

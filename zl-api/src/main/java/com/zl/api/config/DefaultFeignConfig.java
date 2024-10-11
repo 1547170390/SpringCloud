@@ -1,5 +1,6 @@
 package com.zl.api.config;
 
+import com.zl.api.client.fallback.OrderClientFallback;
 import com.zl.common.utils.UserContext;
 import feign.Logger;
 import feign.RequestInterceptor;
@@ -31,6 +32,11 @@ public class DefaultFeignConfig {
                 requestTemplate.header("user-info", userId.toString());
             }
         };
+    }
+
+    @Bean
+    public OrderClientFallback orderClientFallback(){
+        return new OrderClientFallback();
     }
 
 

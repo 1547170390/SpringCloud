@@ -26,9 +26,9 @@ public class OrderServiceImpl implements OrderService{
     private final TestProperties testProperties;
 
     @Override
-    public OrderInfo selectOrderById(Integer orderId) {
+    public OrderInfo selectOrderById(Integer orderId) throws InterruptedException {
         System.out.println("热配置的值"+testProperties.getSum());
-
+        Thread.sleep(5000);
         OrderInfo orderInfo = orderMapper.selectOrderById(orderId);
         return orderInfo;
     }
