@@ -12,6 +12,11 @@ public class DefaultFeignConfig {
         return Logger.Level.FULL;
     }
 
+    /**
+     * 微服务拦截器，一个服务调用另一个服务要把用户信息传递下去。
+     * @return
+     */
+
     @Bean
     public RequestInterceptor requestInterceptor(){
         return new RequestInterceptor() {

@@ -1,5 +1,8 @@
 package com.zl.common.utils;
 
+/**
+ * 用户信息保存
+ */
 public class UserContext {
     private static final ThreadLocal<Long> tl = new ThreadLocal<>();
 
