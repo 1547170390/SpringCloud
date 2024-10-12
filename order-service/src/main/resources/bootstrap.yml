@@ -6,6 +6,6 @@ spring:
         file-extension: yaml
         shared-configs:
           - data-id: shared-jdbc.yaml
-          - data-id: order-service.yaml
             refresh: true
+          - data-id: shared-seata.yaml
 

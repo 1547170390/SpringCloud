@@ -15,7 +15,7 @@ public class ProductController {
     private ProductService productService;
 
     @RequestMapping("/{productId}")
-    public ProductInfo getProductById(@PathVariable("productId") Integer productId) {
+    public ProductInfo getProductById(@PathVariable("productId") Integer productId) throws InterruptedException {
         return productService.selectProductById(productId);
     }
 }

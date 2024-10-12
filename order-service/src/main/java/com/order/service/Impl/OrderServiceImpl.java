@@ -28,7 +28,10 @@ public class OrderServiceImpl implements OrderService{
     @Override
     public OrderInfo selectOrderById(Integer orderId) throws InterruptedException {
         System.out.println("热配置的值"+testProperties.getSum());
-        Thread.sleep(5000);
+        /**
+         * 验证两个服务是不是都回滚了
+         */
+//        int i = orderMapper.updateOrderById(6);
         OrderInfo orderInfo = orderMapper.selectOrderById(orderId);
         return orderInfo;
     }
