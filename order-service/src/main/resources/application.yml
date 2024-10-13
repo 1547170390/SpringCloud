@@ -3,6 +3,11 @@ server:
 spring:
   application:
     name: order-service
+  rabbitmq:
+    host: 10.211.55.7
+    port: 5672
+    username: zl-mq
+    password: xzl.995
 zl:
   db:
     host: 10.211.55.7
