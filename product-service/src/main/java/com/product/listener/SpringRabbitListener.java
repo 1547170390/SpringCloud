@@ -1,5 +1,8 @@
 package com.product.listener;
 
+import com.zl.api.client.OrderClient;
+import com.zl.api.dto.OrderInfo;
+import jakarta.annotation.Resource;
 import org.springframework.amqp.core.ExchangeTypes;
 import org.springframework.amqp.rabbit.annotation.Exchange;
 import org.springframework.amqp.rabbit.annotation.Queue;
@@ -15,17 +18,15 @@ import org.springframework.stereotype.Component;
 @Component
 public class SpringRabbitListener {
 
-    @RabbitListener(queues = "simple.queue")
-    public void process(Object message) {
-        System.out.println("消费者收到的消息"+message);
-    }
+    @Resource
+    private OrderClient orderClient;
 
     @RabbitListener(bindings = @QueueBinding(
-            value = @Queue(name = "topic.queue1"),
-            exchange = @Exchange(name = "zl.topic", type = ExchangeTypes.TOPIC),
-            key = "china.#"
+            value = @Queue(name = "zl.queue",durable = "true"),
+            exchange = @Exchange(name = "zl.topic",type = ExchangeTypes.TOPIC),
+            key = "error"
     ))
-    public void listenTopicQueue1(String message){
-        System.out.println("消费者收到的消息"+message);
+    public void process(Integer id) {
+        OrderInfo orderInfo = orderClient.queryOrderById(id);
     }
 }

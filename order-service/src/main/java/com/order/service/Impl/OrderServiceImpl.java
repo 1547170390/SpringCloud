@@ -31,7 +31,7 @@ public class OrderServiceImpl implements OrderService{
         /**
          * 验证两个服务是不是都回滚了
          */
-//        int i = orderMapper.updateOrderById(6);
+        int i = orderMapper.updateOrderById(6);
         OrderInfo orderInfo = orderMapper.selectOrderById(orderId);
         return orderInfo;
     }
