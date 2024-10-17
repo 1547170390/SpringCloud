@@ -9,6 +9,7 @@ import com.zl.api.dto.OrderInfo;
 import io.seata.spring.annotation.GlobalTransactional;
 import jakarta.annotation.Resource;
 import org.springframework.amqp.core.AmqpTemplate;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +20,7 @@ public class ProductServiceImpl implements ProductService {
     private ProductMapper productMapper;
 
     @Autowired
-    private AmqpTemplate amqpTemplate;
+    private RabbitTemplate amqpTemplate;
 
     @Override
     @GlobalTransactional
